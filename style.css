@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+:root {
+  --body-bg-color: hsl(0, 0%, 82%);
+  --calc-bg-color: hsl(0, 0%, 35%);
+  --display-bg-color: hsl(0, 0%, 41%);
+  --display-fg-color: hsl(173, 85%, 57%);
+
+  --operator-button-color: hsl(112, 85%, 50%);
+  --control-button-color: hsl(33, 100%, 44%);
+
+  --main-font: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--main-font);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-bg-color);
+}
+
+main {
+  height: 572px;
+  width: 480px;
+  display: grid;
+  grid-template-areas:
+    "display display display display"
+    "ac ce plus-mn divide"
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "zero zero decimal equal";
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  border: 4px solid rgb(48, 48, 48);
+  border-radius: 16px;
+  padding: 2px;
+  gap: 2px;
+  background-color: var(--calc-bg-color);
+}
+
+.display {
+  grid-area: display;
+  height: 120px;
+  background-color: var(--display-bg-color);
+  color: var(--display-fg-color);
+  font-size: 56px;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  justify-content: end;
+  align-content: end;
+  padding: 3px 8px;
+  user-select: none;
+  border: 1px ridge var(--calc-bg-color);
+  border-radius: 4px 4px 0 0;
+}
+
+.previous-entry {
+  font-size: 24px;
+  color: hsl(183, 95%, 48%);
+  user-select: none;
+  margin-left: auto;
+}
+
+.numbers {
+  margin-left: auto;
+}
+
+button {
+  border: 0;
+  border-radius: 3px;
+  font-size: 2em;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+.control-button {
+  background-color: var(--control-button-color);
+  color: white;
+}
+
+.operator-button,
+.equal-button {
+  background-color: var(--operator-button-color);
+  color: white;
+}
+
+.num-button,
+.decimal-button {
+  background-color: hsl(59, 90%, 48%);
+  color: white;
+}
+
+.zero {
+  grid-area: zero;
+  grid-column: span 2;
+}
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
+.five {
+  grid-area: five;
+}
+.six {
+  grid-area: six;
+}
+.seven {
+  grid-area: seven;
+}
+.eight {
+  grid-area: eight;
+}
+.nine {
+  grid-area: nine;
+}
+.all-clear-button {
+  grid-area: ac;
+}
+.clear-entry-button {
+  grid-area: ce;
+}
+.minus-plus-button {
+  grid-area: plus-mn;
+}
+.decimal {
+  grid-area: decimal;
+}
+.divide {
+  grid-area: divide;
+}
+.multiply {
+  grid-area: multiply;
+}
+.minus {
+  grid-area: minus;
+}
+.plus {
+  grid-area: plus;
+}
+.equal {
+  grid-area: equal;
+}
